@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聊城纹身 - 鲁西专业纹身艺术与定制服务平台</title>
+    <meta name="description" content="聊城纹身网提供聊城地区专业纹身师预约、纹身风格展示、纹身保养指南及纹身避坑攻略。汇集鲁西地区优质纹身工作室与原创手稿，助您找到最适合自己的艺术表达。">
+    <meta name="keywords" content="聊城纹身, 聊城纹身工作室, 聊城纹身师, 鲁西纹身, 纹身定制, 纹身保养, 聊城纹身价格">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e1e4e8;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section-padding {
+            padding: 4rem 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-cta {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .btn-cta:hover {
+            background-color: #a93226;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.7)), url('https://picsum.photos/seed/tattoo/1600/900') center/cover no-repeat;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Intro Section */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: -3rem;
+        }
+
+        .intro-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .intro-content p {
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .intro-image img {
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Styles Grid */
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .styles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .style-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .style-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        .style-img {
+            height: 200px;
+            width: 100%;
+            background-color: #eee;
+        }
+
+        .style-info {
+            padding: 1.5rem;
+        }
+
+        .style-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .style-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Studio Showcase */
+        .studio-section {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .studio-section .section-title {
+            color: white;
+        }
+
+        .studio-section .section-title::after {
+            background-color: var(--accent-color);
+        }
+
+        .studio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .studio-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .studio-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .studio-card .location {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.15);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+        }
+
+        /* Guide Section */
+        .guide-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .guide-item {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+
+        .guide-item h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .guide-item ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .guide-item li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: var(--text-light);
+            border-top: 1px solid #eee;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: #ecf0f1;
+            padding: 3rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .intro-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-top: 0;
+            }
+
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .nav-wrapper {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                聊城<span>纹身</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#styles">风格展示</a>
+                <a href="#studio">工作室</a>
+                <a href="#guide">避坑指南</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#contact" class="btn-cta">预约咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>寻找属于你的身体艺术</h1>
+                <p>聊城本地专业纹身服务平台，汇聚鲁西地区资深纹身师，提供从手稿设计到术后护理的一站式服务。拒绝流水线，坚持原创与定制。</p>
+                <div style="margin-top: 2rem;">
+                    <a href="#styles" class="btn-cta" style="background-color: white; color: var(--accent-color);">浏览作品</a>
+                    <a href="#guide" style="margin-left: 1rem; border: 1px solid white; padding: 0.5rem 1.5rem; border-radius: 4px;">阅读指南</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Intro Section -->
+        <section class="container">
+            <div class="intro-grid">
+                <div class="intro-content">
+                    <h2>为什么选择本地正规纹身机构？</h2>
+                    <p>在聊城寻找纹身服务时，环境与卫生是首要考量因素。正规的工作室不仅拥有专业的无菌操作流程，更能为您提供长期的艺术咨询服务。</p>
+                    <p>我们致力于打造一个开放、透明的纹身社区，帮助每一位客户在身体上留下具有纪念意义或审美价值的作品。无论你是想要小众的暗黑风格，还是传统的中国风，我们都能为您匹配最合适的纹身师。</p>
+                    <ul style="margin-top: 1rem; color: var(--text-light);">
+                        <li>✓ 本地资深纹身师团队</li>
+                        <li>✓ 严格的无菌卫生标准</li>
+                        <li>✓ 原创手稿，拒绝抄袭</li>
+                    </ul>
+                </div>
+                <div class="intro-image">
+                    <img src="https://picsum.photos/seed/tattoo_art/600/400" alt="纹身艺术作品展示">
+                </div>
+            </div>
+        </section>
+
+        <!-- Styles Section -->
+        <section id="styles" class="section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">热门纹身风格</h2>
+                    <p style="color: var(--text-light); margin-bottom: 3rem;">探索不同的艺术流派，找到最能表达你的那一款</p>
+                </div>
+                
+                <div class="styles-grid">
+                    <article class="style-card">
+                        <div class="style-img" style="background-image: url('https://picsum.photos/seed/blackwork/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="style-info">
+                            <h3>新黑潮</h3>
+                            <p>高对比度的黑色填充，强调线条的粗犷与轮廓的张力，适合大面积皮肤创作。</p>
+                        </div>
+                    </article>
+                    
+                    <article class="style-card">
+                        <div class="style-img" style="background-image: url('https://picsum.photos/seed/japanese/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="style-info">
+                            <h3>传统日式</h3>
+                            <p>色彩鲜艳，图案寓意吉祥（如鲶鱼、松鹤、武士），具有强烈的视觉冲击力。</p>
+                        </div>
+                    </article>
+
+                    <article class="style-card">
+                        <div class="style-img" style="background-image: url('https://picsum.photos/seed/realistic/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="style-info">
+                            <h3>写实风格</h3>
+                            <p>追求照片级的高清还原，细节丰富，常用于肖像、宠物或风景的皮肤移植。</p>
+                        </div>
+                    </article>
+
+                    <article class="style-card">
+                        <div class="style-img" style="background-image: url('https://picsum.photos/seed/minimal/400/300'); background-size: cover; background-position: center;"></div>
+                        <div class="style-info">
+                            <h3>极简线条</h3>
+                            <p>少即是多，利用简洁的线条勾勒出意境，适合作为锁骨、耳后等部位的装饰。</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Studio Section -->
+        <section id="studio" class="section-padding studio-section">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">聊城精选工作室</h2>
+                    <p style="color: rgba(255,255,255,0.7); margin-bottom: 3rem;">经过筛选的本地优质服务场所</p>
+                </div>
+
+                <div class="studio-grid">
+                    <div class="studio-card">
+                        <h3>墨韵工作室</h3>
+                        <div class="location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            聊城市东昌府区·古楼街道
+                        </div>
+                        <div class="tags">
+                            <span class="tag">写实</span>
+                            <span class="tag">黑灰</span>
+                            <span class="tag">老客推荐</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #ecf0f1; opacity: 0.8;">专注写实与黑灰风格多年，拥有超过10年的从业经验，环境整洁，设备齐全。</p>
+                    </div>
+
+                    <div class="studio-card">
+                        <h3>极客刺青</h3>
+                        <div class="location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            聊城市开发区·长江路
+                        </div>
+                        <div class="tags">
+                            <span class="tag">动漫</span>
+                            <span class="tag">日式</span>
+                            <span class="tag">年轻化</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #ecf0f1; opacity: 0.8;">深受年轻群体喜爱，擅长日式传统与动漫IP还原，注重沟通与创意设计。</p>
+                    </div>
+
+                    <div class="studio-card">
+                        <h3>匠心刺青社</h3>
+                        <div class="location">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            聊城市高新区·中华路
+                        </div>
+                        <div class="tags">
+                            <span class="tag">传统</span>
+                            <span class="tag">书法</span>
+                            <span class="tag">中式</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #ecf0f1; opacity: 0.8;">专注于中式传统纹身与书法纹身，传承非遗技艺，每一针都力求精准有力。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section id="guide" class="section-padding">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">纹身避坑与保养指南</h2>
+                </div>
+                <div class="guide-list" style="margin-top: 2rem;">
+                    <div class="guide-item">
+                        <h3>1. 签约前的注意事项</h3>
+                        <p>在聊城找纹身店时，请务必查看店铺的《卫生许可证》和纹身师的健康证。切勿在无证摊点或卫生条件差的地方纹身，这极易导致皮肤感染或乙肝、丙肝等血液传播疾病。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>2. 皮肤过敏测试</h3>
+                        <p>如果您对色素敏感，建议在纹身前在手腕内侧做小范围测试。正规工作室使用的色料均为进口或品牌国货，尽量选择纯植物性色料，减少过敏风险。</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>3. 术后护理流程</h3>
+                        <ul>
+                            <li><strong>结痂期：</strong> 保持创面干燥清洁，不要用手抓挠。</li>
+                            <li><strong>上药：</strong> 按照纹身师指导涂抹修复膏或凡士林。</li>
+                            <li><strong>防晒：</strong> 愈合后避免阳光直射，防止褪色。</li>
+                            <li><strong>禁忌：</strong> 愈合期间避免游泳、桑拿或泡澡。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="section-padding" style="background-color: #f1f2f6;">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-title">常见问题 (FAQ)</h2>
+                </div>
+                <div class="faq-container" style="margin-top: 2rem;">
+                    <div class="faq-item">
+                        <div class="faq-question">聊城纹身大概多少钱？ <span>+</span></div>
+                        <div class="faq-answer">价格取决于面积大小、纹身师级别以及图案复杂程度。通常小纹身几百元，大面积写实风格可能需要数千元。建议直接咨询工作室获取报价。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">纹身后能洗掉吗？ <span>+</span></div>
+                        <div class="faq-answer">现代激光洗纹身技术已经比较成熟，但洗纹身过程痛苦且费用较高，且难以完全清除到不留痕迹。因此，纹身前请务必深思熟虑。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">纹身会痛吗？ <span>+</span></div>
+                        <div class="faq-answer">痛感因人而异，取决于皮肤部位（骨头处痛感强）、个人耐痛度以及纹身师的手法。专业纹身师会尽量减轻疼痛感。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem;">聊城纹身网致力于为本地居民提供最真实、最专业的纹身资源信息，连接纹身师与爱好者。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#styles">风格展示</a></li>
+                        <li><a href="#studio">工作室查询</a></li>
+                        <li><a href="#guide">保养指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：0635-XXXXXXX</li>
+                        <li>地址：山东省聊城市东昌府区</li>
+                        <li>工作时间：周一至周日 10:00 - 22:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 聊城纹身服务平台. All Rights Reserved. 本站内容仅供参考，具体服务请以实体店为准。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const answer = item.nextElementSibling;
+                const icon = item.querySelector('span');
+                
+                // Toggle current
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                } else {
+                    answer.style.display = 'block';
+                    icon.textContent = '-';
+                }
+            });
+        });
+
+        // Smooth Scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
