@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="好看的发型大全：2024流行发型设计、圆脸方脸适合的发型、短发长发造型指南及染发颜色推荐。提供从发型设计思路到日常打理技巧的全方位参考。">
+    <meta name="keywords" content="好看的发型,流行发型,发型设计,圆脸适合发型,染发颜色">
+    <title>好看的发型-流行趋势与造型设计指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4a373;
+            --secondary-color: #faedcd;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-light: #fdfbf7;
+            --white: #ffffff;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-gray);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: var(--secondary-color);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .search-btn:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(135deg, #fdfbf7 0%, #e8dcca 100%);
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 12px 32px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(212, 163, 115, 0.4);
+            transition: var(--transition);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 163, 115, 0.6);
+        }
+
+        .hero-image {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('https://picsum.photos/seed/hairmodel/800/1000');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Filter Bar */
+        .filter-bar {
+            background: var(--white);
+            padding: 1.5rem 0;
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+        }
+
+        .filter-tags {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 8px 20px;
+            background: var(--bg-light);
+            border: 1px solid #eee;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            color: var(--text-gray);
+        }
+
+        .tag:hover, .tag.active {
+            background: var(--text-dark);
+            color: var(--white);
+            border-color: var(--text-dark);
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 24px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .view-all:hover {
+            color: var(--primary-color);
+        }
+
+        /* Grid Layouts */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card Styles */
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            height: 350px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(0,0,0,0.6);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .card-footer span {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        /* Color Palette Section */
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .color-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .color-card:hover {
+            transform: scale(1.03);
+        }
+
+        .color-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            box-shadow: inset 0 0 0 4px rgba(0,0,0,0.05);
+        }
+
+        .color-name {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .color-desc {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+        }
+
+        /* Tips Section */
+        .tips-container {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow);
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .tip-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tip-item h3::before {
+            content: '✦';
+            color: var(--primary-color);
+        }
+
+        .tip-item p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--white);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border: 1px solid #eee;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            background: #fff;
+        }
+
+        .faq-question:hover {
+            background: #fafafa;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: #fcfcfc;
+        }
+
+        .faq-answer p {
+            padding: 1.2rem;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c2c2c;
+            color: #aaa;
+            padding: 4rem 0 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                height: auto;
+                padding: 4rem 0;
+                flex-direction: column-reverse;
+                text-align: center;
+            }
+
+            .hero-image {
+                position: relative;
+                width: 100%;
+                height: 350px;
+                order: -1;
+            }
+
+            .hero-content {
+                margin-top: 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .tips-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                display: none;
+            }
+
+            .header-inner {
+                justify-content: center;
+            }
+
+            .grid-3, .grid-4, .color-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                <span>发型灵感</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">流行趋势</a></li>
+                    <li><a href="#">脸型匹配</a></li>
+                    <li><a href="#">染发颜色</a></li>
+                    <li><a href="#">造型教程</a></li>
+                </ul>
+            </nav>
+            <div class="search-btn">搜索发型</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container" style="display:flex; width:100%; align-items:center;">
+                <div class="hero-content">
+                    <h1>找到最适合你的<span style="color: var(--primary-color);">好看发型</span></h1>
+                    <p>无论是追求时尚感还是日常打理，我们提供海量发型案例与专业设计建议，助你轻松打造百变造型。</p>
+                    <a href="#" class="cta-button">立即探索发型库</a>
+                </div>
+            </div>
+            <div class="hero-image"></div>
+        </section>
+
+        <!-- Filter Section -->
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-tags">
+                    <span class="tag active">全部推荐</span>
+                    <span class="tag">短发造型</span>
+                    <span class="tag">锁骨发</span>
+                    <span class="tag">长卷发</span>
+                    <span class="tag">直发</span>
+                    <span class="tag">纹理烫</span>
+                    <span class="tag">法式刘海</span>
+                    <span class="tag">羊毛卷</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trending Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">2024 热门发型趋势</h2>
+                <a href="#" class="view-all">查看更多 <span>&rarr;</span></a>
+            </div>
+            <div class="grid-3">
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-tag">短发</span>
+                        <img src="https://picsum.photos/seed/shorthair1/400/500" alt="韩式空气刘海短发">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">韩式空气刘海短发</h3>
+                        <p class="card-desc">轻盈透气，修饰脸型，适合圆脸和方脸，自带减龄效果。</p>
+                        <div class="card-footer">
+                            <span>热度: 9.8</span>
+                            <span>难度: 简单</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-tag">锁骨发</span>
+                        <img src="https://picsum.photos/seed/shoulderhair/400/500" alt="法式慵懒锁骨发">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">法式慵懒锁骨发</h3>
+                        <p class="card-desc">自然卷度不费力，适合职场通勤，知性优雅气质。</p>
+                        <div class="card-footer">
+                            <span>热度: 9.6</span>
+                            <span>难度: 中等</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <span class="card-tag">长发</span>
+                        <img src="https://picsum.photos/seed/longhair2/400/500" alt="日系波浪长发">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">日系复古波浪长发</h3>
+                        <p class="card-desc">大波浪卷度，增加发量感，搭配复古妆容超有氛围。</p>
+                        <div class="card-footer">
+                            <span>热度: 9.5</span>
+                            <span>难度: 较难</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Face Shape Matching -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">按脸型挑选好看的发型</h2>
+                <a href="#" class="view-all">脸型测试 <span>&rarr;</span></a>
+            </div>
+            <div class="grid-4">
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/seed/roundface/300/350" alt="圆脸适合发型">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">圆脸</h3>
+                        <p class="card-desc">推荐：侧分长卷发、高颅顶造型、八字刘海。</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/seed/ovalface/300/350" alt="鹅蛋脸适合发型">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">鹅蛋脸</h3>
+                        <p class="card-desc">推荐：几乎所有发型，可尝试复古卷、高马尾。</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/seed/longface/300/350" alt="长脸适合发型">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">长脸</h3>
+                        <p class="card-desc">推荐：齐刘海、齐肩短发、增加两侧蓬松度。</p>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-img-wrapper">
+                        <img src="https://picsum.photos/seed/squareface/300/350" alt="方脸适合发型">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">方脸</h3>
+                        <p class="card-desc">推荐：长卷发修饰下颌线、空气刘海软化棱角。</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Hair Color Palette -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">流行染发颜色</h2>
+            </div>
+            <div class="color-grid">
+                <div class="color-card">
+                    <div class="color-circle" style="background: #f3e5ab;"></div>
+                    <div class="color-name">奶茶棕</div>
+                    <div class="color-desc">温柔减龄，适合亚洲肤色</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-circle" style="background: #d4a373;"></div>
+                    <div class="color-name">黑茶色</div>
+                    <div class="color-desc">低调显白，日常不出错</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-circle" style="background: #e0c3fc;"></div>
+                    <div class="color-name">紫灰</div>
+                    <div class="color-desc">个性时尚，适合晚宴造型</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-circle" style="background: #a8e6cf;"></div>
+                    <div class="color-name">薄荷绿</div>
+                    <div class="color-desc">清新活力，春夏首选</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-circle" style="background: #ffaaa5;"></div>
+                    <div class="color-name">蜜桃粉</div>
+                    <div class="color-desc">甜美可爱，少女心爆棚</div>
+                </div>
+                <div class="color-card">
+                    <div class="color-circle" style="background: #ffd3b6;"></div>
+                    <div class="color-name">蜜糖橘</div>
+                    <div class="color-desc">阳光明媚，显白首选</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tips & Guide -->
+        <section class="container">
+            <div class="tips-container">
+                <div class="section-header">
+                    <h2 class="section-title">发型设计与打理技巧</h2>
+                </div>
+                <div class="tips-grid">
+                    <div class="tip-item">
+                        <h3>如何判断自己适合的发型长度？</h3>
+                        <p>发型的长度不仅要看脸型，还要结合个人的发质和身高。发质细软的人建议留中长发，利用卷度增加发量感；发质粗硬的人则可以尝试层次感强的短发或锁骨发，避免显得过于厚重。</p>
+                        <a href="#" style="color: var(--primary-color); font-weight: 600;">阅读详细指南 &rarr;</a>
+                    </div>
+                    <div class="tip-item">
+                        <h3>不同发质的日常护理要点</h3>
+                        <p>干枯毛躁的发质需要多使用护发精油和发膜；油性发质则要注意清洁频率，并选择蓬松感的造型。定期修剪发梢是保持发型好看的关键，建议每6-8周修剪一次。</p>
+                        <a href="#" style="color: var(--primary-color); font-weight: 600;">阅读详细指南 &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题解答</h2>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">第一次去理发店，如何准确描述我想剪的发型？</div>
+                <div class="faq-answer">
+                    <p>建议先在手机上找到几张喜欢的发型图片，打印出来或者直接给理发师看。同时告诉发型师你的脸型特点、发质情况以及你想要的长度和风格（如休闲、职场、甜美）。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">染发后掉色快怎么办？</div>
+                <div class="faq-answer">
+                    <p>选择质量好的染发剂，并在染后使用固色洗发水和护发素。避免频繁用热水洗头，游泳时务必戴泳帽，防止氯气或海水侵蚀发色。</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">短发每天洗头会伤发质吗？</div>
+                <div class="faq-answer">
+                    <p>短发容易出油，每天洗头是可以的。但要注意洗发水温不宜过高，洗完后及时涂抹护发素，并使用低温吹风机吹干，以减少热损伤。</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 1rem; color: #fff;">
+                        <span>发型灵感</span>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">
+                        专注于提供最前沿的发型设计灵感和专业的造型建议。帮助每一位爱美的朋友找到最适合自己的风格。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>发型分类</h4>
+                    <ul>
+                        <li><a href="#">韩系短发</a></li>
+                        <li><a href="#">欧美卷发</a></li>
+                        <li><a href="#">日系直发</a></li>
+                        <li><a href="#">复古造型</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>热门专题</h4>
+                    <ul>
+                        <li><a href="#">脸型测试</a></li>
+                        <li><a href="#">染发颜色</a></li>
+                        <li><a href="#">刘海教程</a></li>
+                        <li><a href="#">发质护理</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li><a href="#">合作投稿</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">商务合作</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 发型灵感网 版权所有. 本站内容仅供参考，具体造型请咨询专业发型师。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Filter Tags Logic
+            const tags = document.querySelectorAll('.tag');
+            tags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    tags.forEach(t => t.classList.remove('active'));
+                    tag.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+                          </html>
