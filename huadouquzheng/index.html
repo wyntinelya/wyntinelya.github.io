@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花都区政府网-政务公开、便民服务与互动交流平台</title>
+    <meta name="description" content="花都区政府网为您提供广州市花都区政务信息、政策法规、办事指南、财政公开及公共服务等一站式信息查询服务，是花都市民了解政府动态、办理政务业务的重要窗口。">
+    <meta name="keywords" content="花都区政府网,花都政务,广州花都,花都区政府,政务公开,办事指南">
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #004494;
+            --accent-color: #f39c12;
+            --text-color: #333333;
+            --text-light: #666666;
+            --bg-light: #f4f6f9;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "Heiti SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 5px solid var(--primary-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .more-link {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .top-bar {
+            background-color: var(--bg-light);
+            font-size: 12px;
+            color: var(--text-light);
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .top-bar a {
+            margin-left: 15px;
+            color: var(--text-light);
+        }
+
+        .top-bar a:hover {
+            color: var(--primary-color);
+        }
+
+        .main-header {
+            padding: 20px 0;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .search-box {
+            display: flex;
+            width: 400px;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-right: none;
+            border-radius: 4px 0 0 4px;
+            outline: none;
+        }
+
+        .search-box button {
+            padding: 0 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 0 4px 4px 0;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+        }
+
+        .nav-list {
+            display: flex;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 15px 25px;
+            color: white;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .nav-link:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .nav-link.active {
+            background-color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .hero-news {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            border: 1px solid #e1eaf5;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .news-list {
+            margin-top: 15px;
+        }
+
+        .news-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .news-item::before {
+            content: "•";
+            color: var(--primary-color);
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .news-item a {
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .news-date {
+            color: var(--text-light);
+            font-size: 13px;
+            min-width: 80px;
+        }
+
+        .focus-areas {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .focus-card {
+            background-color: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            transition: box-shadow 0.3s;
+        }
+
+        .focus-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .focus-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .focus-desc {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Main Content Layout */
+        .main-content {
+            flex: 1;
+            padding-bottom: 40px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 30px;
+        }
+
+        /* Section Styles */
+        .section-box {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        /* Table Style */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .data-table th, .data-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background-color: #f8f9fa;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+
+        .data-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .data-table td a {
+            color: var(--primary-color);
+        }
+
+        /* Service List */
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .service-item {
+            text-align: center;
+            padding: 20px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .service-item:hover {
+            border-color: var(--primary-color);
+            background-color: #f0f7ff;
+        }
+
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 10px;
+            border-radius: 50%;
+            background-color: #eef5ff;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .service-name {
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        /* Sidebar */
+        .sidebar-box {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent-color);
+            color: var(--text-color);
+        }
+
+        .notice-list li {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .notice-list li a {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .notice-list li::before {
+            content: "[";
+            margin-right: 5px;
+            color: var(--accent-color);
+        }
+
+        .notice-list li::after {
+            content: "]";
+            margin-left: 5px;
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h3 {
+            color: white;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid, .content-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+            }
+
+            .nav-link {
+                padding: 12px 15px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .data-table th, .data-table td {
+                font-size: 13px;
+                padding: 8px;
+            }
+
+            .top-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Utility Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <span id="current-date">加载中...</span>
+                <span>欢迎访问广州市花都区人民政府门户网站</span>
+            </div>
+            <div class="top-links">
+                <a href="#">设为首页</a>
+                <a href="#">收藏本站</a>
+                <a href="#">网站地图</a>
+                <a href="#">无障碍浏览</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container main-header">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-icon">花</div>
+                    <div class="logo-text">
+                        <div>广州市花都区人民政府</div>
+                        <div style="font-size: 14px; font-weight: normal; color: var(--text-light);">Huadu District People's Government of Guangzhou</div>
+                    </div>
+                </a>
+                <div class="search-box">
+                    <input type="text" placeholder="请输入您要查找的政务信息...">
+                    <button type="button">搜索</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation -->
+        <nav>
+            <div class="container">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#" class="nav-link active">首页</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">政务公开</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">政务服务</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">互动交流</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">花都风采</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">投资花都</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">专题专栏</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-news">
+                    <h2 style="font-size: 20px; margin-bottom: 15px; color: var(--primary-color);">今日头条</h2>
+                    <div class="news-list">
+                        <div class="news-item">
+                            <a href="#">我区召开2024年高质量发展大会</a>
+                            <span class="news-date">2024-05-20</span>
+                        </div>
+                        <div class="news-item">
+                            <a href="#">关于开展花都区安全生产专项整治行动的通知</a>
+                            <span class="news-date">2024-05-19</span>
+                        </div>
+                        <div class="news-item">
+                            <a href="#">花都区发布最新人才引进政策，最高补贴500万元</a>
+                            <span class="news-date">2024-05-18</span>
+                        </div>
+                        <div class="news-item">
+                            <a href="#">我区2024年义务教育阶段招生工作方案出炉</a>
+                            <span class="news-date">2024-05-17</span>
+                        </div>
+                        <div class="news-item">
+                            <a href="#">区领导调研重点项目建设进展情况</a>
+                            <span class="news-date">2024-05-16</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="focus-areas">
+                    <div class="focus-card">
+                        <div class="focus-title">便民服务</div>
+                        <p class="focus-desc">社保查询、公积金提取、不动产登记预约等24小时在线服务。</p>
+                    </div>
+                    <div class="focus-card">
+                        <div class="focus-title">政策解读</div>
+                        <p class="focus-desc">最新法律法规、政府工作报告及惠企利民政策详细解读。</p>
+                    </div>
+                    <div class="focus-card">
+                        <div class="focus-title">民生热线</div>
+                        <p class="focus-desc">12345 政务服务便民热线受理范围及投诉建议入口。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+        <div class="content-grid">
+            
+            <!-- Left Column -->
+            <div class="left-col">
+                
+                <!-- Hot Documents -->
+                <section class="section-box">
+                    <div class="section-title">
+                        政务公开
+                        <a href="#" class="more-link">更多 &gt;</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 40%;">文件名称</th>
+                                <th style="width: 20%;">发布时间</th>
+                                <th style="width: 20%;">发布单位</th>
+                                <th style="width: 20%;">文号</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><a href="#">花都区人民政府关于印发《花都区“十四五”现代服务业发展规划》的通知</a></td>
+                                <td>2024-05-15</td>
+                                <td>区政府办</td>
+                                <td>花府〔2024〕12号</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">关于进一步加强花都区老旧小区改造管理工作的实施意见</a></td>
+                                <td>2024-05-14</td>
+                                <td>区住建局</td>
+                                <td>花建〔2024〕8号</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">2024年花都区预算执行情况及2025年预算草案的报告</a></td>
+                                <td>2024-05-10</td>
+                                <td>区财政局</td>
+                                <td>花财预〔2024〕5号</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#">关于做好2024年清明节期间森林防火工作的通知</a></td>
+                                <td>2024-04-05</td>
+                                <td>区应急管理局</td>
+                                <td>花应急〔2024〕3号</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Government Work Report -->
+                <section class="section-box">
+                    <div class="section-title">
+                        重点专题
+                        <a href="#" class="more-link">更多 &gt;</a>
+                    </div>
+                    <div class="service-list">
+                        <div class="service-item">
+                            <div class="service-icon">📊</div>
+                            <div class="service-name">政府工作报告</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🏗️</div>
+                            <div class="service-name">招商引资</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🌱</div>
+                            <div class="service-name">乡村振兴</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🛡️</div>
+                            <div class="service-name">安全生产</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🎓</div>
+                            <div class="service-name">教育考试</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🏥</div>
+                            <div class="service-name">医疗卫生</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🏛️</div>
+                            <div class="service-name">行政执法</div>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">⚖️</div>
+                            <div class="service-name">司法行政</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- News Updates -->
+                <section class="section-box">
+                    <div class="section-title">
+                        区内要闻
+                        <a href="#" class="more-link">更多 &gt;</a>
+                    </div>
+                    <ul style="display: flex; flex-direction: column; gap: 15px;">
+                        <li style="border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                            <a href="#" style="font-weight: 500; display: block; margin-bottom: 5px;">花都区举办“中国品牌日”系列活动 推动区域品牌高质量发展</a>
+                            <span style="font-size: 13px; color: #888;">区融媒体中心 · 2024-05-20</span>
+                        </li>
+                        <li style="border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                            <a href="#" style="font-weight: 500; display: block; margin-bottom: 5px;">我区多部门联合开展“五一”假期文旅市场专项检查</a>
+                            <span style="font-size: 13px; color: #888;">区文化广电旅游体育局 · 2024-05-03</span>
+                        </li>
+                        <li style="border-bottom: 1px solid #eee; padding-bottom: 10px;">
+                            <a href="#" style="font-weight: 500; display: block; margin-bottom: 5px;">花都区举办2024年春季人才招聘会 吸引千余名人才返乡就业</a>
+                            <span style="font-size: 13px; color: #888;">区人社局 · 2024-04-28</span>
+                        </li>
+                        <li>
+                            <a href="#" style="font-weight: 500; display: block; margin-bottom: 5px;">我区启动“数字乡村”建设试点工作 智慧赋能乡村振兴</a>
+                            <span style="font-size: 13px; color: #888;">区农业农村局 · 2024-04-15</span>
+                        </li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Right Column -->
+            <aside class="right-col">
+                
+                <!-- Notice Board -->
+                <div class="sidebar-box">
+                    <div class="sidebar-title">通知公告</div>
+                    <ul class="notice-list">
+                        <li><a href="#">关于2024年端午节放假安排的通知</a></li>
+                        <li><a href="#">关于公开征集“花都区城市LOGO”设计方案的通知</a></li>
+                        <li><a href="#">关于规范花都区政务新媒体信息发布工作的通知</a></li>
+                        <li><a href="#">关于开展2024年度法治政府建设情况报告的通知</a></li>
+                        <li><a href="#">关于调整花都区2024年普通中小学招生范围的公告</a></li>
+                    </ul>
+                </div>
+
+                <!-- Interactive -->
+                <div class="sidebar-box">
+                    <div class="sidebar-title">互动交流</div>
+                    <div style="text-align: center; padding: 10px;">
+                        <p style="font-size: 14px; margin-bottom: 15px;">有问题？找领导</p>
+                        <a href="#" style="display: inline-block; padding: 10px 20px; background-color: var(--primary-color); color: white; border-radius: 4px; font-size: 14px;">网上信访大厅</a>
+                    </div>
+                    <hr style="margin: 20px 0; border: 0; border-top: 1px solid #eee;">
+                    <div style="text-align: center; padding: 10px;">
+                        <p style="font-size: 14px; margin-bottom: 15px;">在线咨询</p>
+                        <a href="#" style="display: inline-block; padding: 10px 20px; background-color: var(--accent-color); color: white; border-radius: 4px; font-size: 14px;">咨询留言</a>
+                    </div>
+                </div>
+
+                <!-- Links -->
+                <div class="sidebar-box">
+                    <div class="sidebar-title">友情链接</div>
+                    <div style="font-size: 13px; line-height: 2;">
+                        <a href="#">中国政府网</a> | 
+                        <a href="#">广东省人民政府</a> | 
+                        <a href="#">广州市人民政府</a><br>
+                        <a href="#">国家部委</a> | 
+                        <a href="#">市属部门</a> | 
+                        <a href="#">花都区属部门</a><br>
+                        <a href="#">全国政府网站</a> | 
+                        <a href="#">政府信息公开</a>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h3>广州市花都区人民政府</h3>
+                    <p style="font-size: 14px; line-height: 1.8; margin-bottom: 20px;">
+                        地址：广州市花都区新华街道花城路82号<br>
+                        邮编：510800<br>
+                        办公电话：020-8688XXXX<br>
+                        传真：020-8688XXXX
+                    </p>
+                </div>
+                <div class="footer-links">
+                    <h4>网站导航</h4>
+                    <ul>
+                        <li><a href="#">政务公开</a></li>
+                        <li><a href="#">政务服务</a></li>
+                        <li><a href="#">互动交流</a></li>
+                        <li><a href="#">投资花都</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>专题栏目</h4>
+                    <ul>
+                        <li><a href="#">智慧花都</a></li>
+                        <li><a href="#">创文在行动</a></li>
+                        <li><a href="#">扫黑除恶</a></li>
+                        <li><a href="#">疫情防控</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>公众监督</h4>
+                    <ul>
+                        <li><a href="#">依申请公开</a></li>
+                        <li><a href="#">政府公报</a></li>
+                        <li><a href="#">民意征集</a></li>
+                        <li><a href="#">在线访谈</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 广州市花都区人民政府 版权所有 | 粤ICP备XXXXXXXX号 | 网站标识码：4401140032</p>
+                <p style="margin-top: 10px; color: #7f8c8d;">主办单位：广州市花都区人民政府办公室 | 技术支持：广州市花都区电子政务中心</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <script>
+        // Simple script to set current date
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateElement = document.getElementById('current-date');
+            const now = new Date();
+            const options = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+            dateElement.textContent = now.toLocaleDateString('zh-CN', options);
+        });
+    </script>
+</body>
+                          </html>
