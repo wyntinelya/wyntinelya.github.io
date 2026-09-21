@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>泰拉瑞亚合成表 - 全版本物品制作指南与配方查询</title>
+    <meta name="description" content="泰拉瑞亚合成表大全，提供1.4.4版本及更早版本的完整制作配方。包含武器、防具、家具、材料等各类物品的合成方法，帮助玩家高效收集资源并打造强力装备。">
+    <meta name="keywords" content="泰拉瑞亚合成表, 泰拉瑞亚配方, 泰拉瑞亚制作, Terraria Recipes, 泰拉瑞亚攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --bg-color: #1a1a2e;
+            --card-bg: #16213e;
+            --accent-color: #0f3460;
+            --highlight: #e94560;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border-radius: 8px;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: rgba(22, 33, 62, 0.95);
+            border-bottom: 1px solid var(--accent-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 0 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--highlight);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--highlight);
+            background-color: rgba(233, 69, 96, 0.1);
+        }
+
+        /* Search Bar */
+        .search-container {
+            position: relative;
+            flex-grow: 1;
+            max-width: 400px;
+            margin: 0 20px;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 10px 15px;
+            border-radius: 20px;
+            border: 1px solid var(--accent-color);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .search-input:focus {
+            border-color: var(--highlight);
+        }
+
+        /* Main Layout */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--accent-color) 0%, #1a1a2e 100%);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            margin-bottom: 30px;
+            border: 1px solid var(--accent-color);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 25px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--highlight);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .tab-btn {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-color);
+            color: var(--text-muted);
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .tab-btn:hover {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+        .tab-btn.active {
+            background-color: var(--highlight);
+            color: #fff;
+            border-color: var(--highlight);
+        }
+
+        /* Grid Layout */
+        .recipes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Recipe Card */
+        .recipe-card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid transparent;
+            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--accent-color);
+        }
+
+        .card-header {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .item-tier {
+            font-size: 0.75rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background-color: rgba(255,255,255,0.1);
+            color: var(--text-muted);
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .recipe-step {
+            background-color: rgba(0,0,0,0.2);
+            padding: 8px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .recipe-step strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--highlight);
+        }
+
+        .recipe-ingredients {
+            margin-top: auto;
+            padding-top: 10px;
+            border-top: 1px dashed rgba(255,255,255,0.1);
+        }
+
+        .ingredients-title {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .ingredient-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .tag {
+            background-color: rgba(233, 69, 96, 0.15);
+            color: #ff8fa3;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--accent-color);
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--highlight);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            .search-container {
+                width: 100%;
+                margin: 10px 0;
+            }
+            .hero {
+                padding: 25px;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .recipes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="header-content">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+            Terraria Recipes
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">合成表</a></li>
+                <li><a href="#">Boss掉落</a></li>
+                <li><a href="#">装备图鉴</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="搜索物品名称 (如: 魔剑)...">
+        </div>
+    </div>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>泰拉瑞亚合成表大全</h1>
+        <p>无论你是冒险新手还是世界征服者，这里提供从基础工具到终极神器的所有配方。整理自 1.4.4 版本，助你高效制作。</p>
+        <div class="hero-stats">
+            <div class="stat-item">
+                <span class="stat-number">1200+</span>
+                <span class="stat-label">收录物品</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">分类</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">1.4.4</span>
+                <span class="stat-label">最新版本</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="filter-section">
+        <div class="filter-tabs" id="filterTabs">
+            <button class="tab-btn active" data-category="all">全部</button>
+            <button class="tab-btn" data-category="weapon">武器</button>
+            <button class="tab-btn" data-category="armor">防具</button>
+            <button class="tab-btn" data-category="furniture">家具</button>
+            <button class="tab-btn" data-category="accessory">饰品</button>
+            <button class="tab-btn" data-category="crafting">工作台</button>
+        </div>
+    </section>
+
+    <section class="recipes-grid" id="recipesGrid">
+        <!-- 武器卡片 -->
+        <article class="recipe-card" data-category="weapon">
+            <div class="card-header">
+                <span class="item-name">血肉傀儡</span>
+                <span class="item-tier">Boss</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>在工匠作坊中合成，无需熔炉。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">血肉墙</span>
+                        <span class="tag">铜锭 x 5</span>
+                        <span class="tag">铁锭 x 5</span>
+                        <span class="tag">金锭 x 5</span>
+                        <span class="tag">银锭 x 5</span>
+                        <span class="tag">秘银锭 x 5</span>
+                        <span class="tag">山铜锭 x 5</span>
+                        <span class="tag">钛金锭 x 5</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="recipe-card" data-category="weapon">
+            <div class="card-header">
+                <span class="item-name">泰拉刃</span>
+                <span class="item-tier">传奇</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>由光之耀斑和星怒合成。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">光之耀斑</span>
+                        <span class="tag">星怒</span>
+                        <span class="tag">天顶剑碎片 x 5</span>
+                        <span class="tag">秘银/山铜砧</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="recipe-card" data-category="weapon">
+            <div class="card-header">
+                <span class="item-name">天顶剑</span>
+                <span class="item-tier">传说</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>将六把神级剑放入工匠作坊。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">彩虹猫之刃</span>
+                        <span class="tag">叶绿之刃</span>
+                        <span class="tag">狂星之怒</span>
+                        <span class="tag">熔火巨剑</span>
+                        <span class="tag">霜月</span>
+                        <span class="tag">夜明之剑</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="recipe-card" data-category="weapon">
+            <div class="card-header">
+                <span class="item-name">火星喷子</span>
+                <span class="item-tier">史诗</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>火星飞碟掉落物，发射追踪火箭。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">火星飞碟核心</span>
+                        <span class="tag">火星漫游车</span>
+                        <span class="tag">天顶剑碎片 x 3</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 防具卡片 -->
+        <article class="recipe-card" data-category="armor">
+            <div class="card-header">
+                <span class="item-name">山铜盔甲</span>
+                <span class="item-tier">大师</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：秘银/山铜砧</strong>
+                    <p>由山铜锭打造，提供极高的防御和属性。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">山铜锭 x 70</span>
+                        <span class="tag">任意头盔</span>
+                        <span class="tag">任意胸甲</span>
+                        <span class="tag">任意护腿</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="recipe-card" data-category="armor">
+            <div class="card-header">
+                <span class="item-name">光束护盾</span>
+                <span class="item-tier">史诗</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>增加移动速度和闪避几率。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">星云护盾</span>
+                        <span class="tag">星旋护盾</span>
+                        <span class="tag">星尘护盾</span>
+                        <span class="tag">光束核心</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 家具卡片 -->
+        <article class="recipe-card" data-category="furniture">
+            <div class="card-header">
+                <span class="item-name">天顶桌</span>
+                <span class="item-tier">传说</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>使用天顶剑碎片制作的强力家具。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">天顶剑碎片 x 15</span>
+                        <span class="tag">任意木材 x 10</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="recipe-card" data-category="furniture">
+            <div class="card-header">
+                <span class="item-name">天顶椅</span>
+                <span class="item-tier">传说</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>与天顶桌配套。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">天顶剑碎片 x 10</span>
+                        <span class="tag">任意木材 x 5</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 饰品卡片 -->
+        <article class="recipe-card" data-category="accessory">
+            <div class="card-header">
+                <span class="item-name">天界盒</span>
+                <span class="item-tier">史诗</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>自动恢复生命、魔力并免疫减益。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">天界壳</span>
+                        <span class="tag">天界盾</span>
+                        <span class="tag">天界星</span>
+                        <span class="tag">天界徽章</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <article class="recipe-card" data-category="accessory">
+            <div class="card-header">
+                <span class="item-name">愤怒玫瑰</span>
+                <span class="item-tier">史诗</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>在攻击时召唤玫瑰并造成伤害。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">幽灵玫瑰</span>
+                        <span class="tag">愤怒扳手</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- 工作台卡片 -->
+        <article class="recipe-card" data-category="crafting">
+            <div class="card-header">
+                <span class="item-name">工匠作坊</span>
+                <span class="item-tier">工具</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工匠作坊</strong>
+                    <p>用于合成大量高级物品和武器。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">工匠之手</span>
+                        <span class="tag">工匠之锤</span>
+                        <span class="tag">工匠之锯</span>
+                        <span class="tag">工匠之剪</span>
+                        <span class="tag">工匠之钻</span>
+                        <span class="tag">工匠之镐</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+        <article class="recipe-card" data-category="crafting">
+            <div class="card-header">
+                <span class="item-name">铁砧</span>
+                <span class="item-tier">基础</span>
+            </div>
+            <div class="card-body">
+                <div class="recipe-step">
+                    <strong>合成台：工作台</strong>
+                    <p>游戏中最基础的锻造工具。</p>
+                </div>
+                <div class="recipe-ingredients">
+                    <div class="ingredients-title">所需材料</div>
+                    <div class="ingredient-tags">
+                        <span class="tag">铁锭 x 5</span>
+                        <span class="tag">任意木材 x 5</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2023 泰拉瑞亚合成表指南 - 本站资源整理自社区，仅供游戏参考。</p>
+    <p>泰拉瑞亚 (Terraria) 是 Re-Logic 公司的注册商标。本页面与 Re-Logic 无关。</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.tab-btn');
+        const cards = document.querySelectorAll('.recipe-card');
+
+        // Tab 切换逻辑
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // 移除所有激活状态
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                const category = tab.getAttribute('data-category');
+
+                // 过滤卡片
+                cards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                        // 添加一个简单的淡入动画效果
+                        card.style.opacity = '0';
+                        setTimeout(() => card.style.opacity = '1', 50);
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // 简单的搜索过滤逻辑 (前端模拟)
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            
+            cards.forEach(card => {
+                const name = card.querySelector('.item-name').textContent.toLowerCase();
+                const tags = card.querySelectorAll('.tag').forEach(t => t.textContent.toLowerCase()).join('');
+                
+                if (name.includes(term) || tags.includes(term)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+  </html>
