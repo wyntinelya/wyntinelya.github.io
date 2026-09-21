@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗技g502驱动 - 官方下载与设置指南</title>
+    <meta name="description" content="提供罗技G502游戏鼠标最新驱动程序下载及安装教程。包含G502 HERO、G502 LIGHTSPEED等型号的配置软件、按键设置、宏编程及RGB灯效管理。">
+    <meta name="keywords" content="罗技g502驱动, 罗技G502, 驱动下载, 游戏鼠标驱动, G502设置">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #cc0000; /* Logitech Red */
+            --secondary-color: #333333;
+            --bg-color: #f4f4f4;
+            --card-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-secondary: #666666;
+            --border-color: #e1e1e1;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Main Layout */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                grid-template-columns: 1fr;
+            }
+            nav {
+                display: none; /* Simplified for mobile */
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 12px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #a00000;
+            transform: translateY(-2px);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-title::before {
+            content: '';
+            display: block;
+            width: 5px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Driver Table */
+        .driver-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .driver-table th, .driver-table td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .driver-table th {
+            background-color: #f9f9f9;
+            color: var(--text-secondary);
+            font-weight: 600;
+        }
+
+        .driver-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .status-new {
+            background-color: #e6f4ea;
+            color: #1e7e34;
+        }
+
+        /* Feature List */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            padding: 1.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Steps */
+        .step-list {
+            list-style: none;
+            counter-reset: step;
+        }
+
+        .step-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2rem;
+            height: 2rem;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2rem;
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-item h4 {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+
+        .faq-item p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c2c2c;
+            color: #aaa;
+            padding: 3rem 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.5rem;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Utilities */
+        .text-small {
+            font-size: 0.9rem;
+        }
+        .text-muted {
+            color: var(--text-secondary);
+        }
+        .tag {
+            background-color: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span>Logitech</span> 驱动中心
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">驱动下载</a></li>
+                    <li><a href="#guide">安装教程</a></li>
+                    <li><a href="#features">功能介绍</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>罗技G502 驱动程序</h1>
+            <p>下载并安装最新的 Logitech G Hub 软件，解锁 G502 HERO、LIGHTSPEED 等型号的全部功能。自定义宏、调节DPI、设置RGB灯效。</p>
+            <a href="#download" class="btn-download">立即下载 G Hub 软件</a>
+        </section>
+
+        <!-- Main Content Grid -->
+        <div class="main-content">
+            
+            <!-- Driver Table Section -->
+            <section id="download" class="content-section">
+                <h2 class="section-title">驱动程序下载</h2>
+                <p class="text-muted" style="margin-bottom: 1.5rem;">请根据您鼠标的具体型号选择对应的驱动版本。推荐使用 Logitech G Hub 通用软件以获得最佳体验。</p>
+                <table class="driver-table">
+                    <thead>
+                        <tr>
+                            <th>型号</th>
+                            <th>软件名称</th>
+                            <th>版本</th>
+                            <th>状态</th>
+                            <th>下载</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>G502 HERO</td>
+                            <td>G Hub</td>
+                            <td>v2024.05</td>
+                            <td><span class="status-badge status-new">最新</span></td>
+                            <td><a href="#" style="color:var(--primary-color); font-weight:bold;">下载</a></td>
+                        </tr>
+                        <tr>
+                            <td>G502 LIGHTSPEED</td>
+                            <td>G Hub</td>
+                            <td>v2024.05</td>
+                            <td><span class="status-badge status-new">最新</span></td>
+                            <td><a href="#" style="color:var(--primary-color); font-weight:bold;">下载</a></td>
+                        </tr>
+                        <tr>
+                            <td>G502 SE Wireless</td>
+                            <td>G Hub</td>
+                            <td>v2024.05</td>
+                            <td><span class="status-badge">最新</span></td>
+                            <td><a href="#" style="color:var(--primary-color); font-weight:bold;">下载</a></td>
+                        </tr>
+                        <tr>
+                            <td>G502 X PLUS</td>
+                            <td>G Hub</td>
+                            <td>v2024.05</td>
+                            <td><span class="status-badge">最新</span></td>
+                            <td><a href="#" style="color:var(--primary-color); font-weight:bold;">下载</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Installation Guide -->
+            <section id="guide" class="content-section">
+                <h2 class="section-title">安装与设置指南</h2>
+                <div class="step-list">
+                    <li>
+                        <h3>1. 下载并运行安装包</h3>
+                        <p>点击上方表格中的下载链接，运行安装程序。安装过程需要管理员权限，请确保在安装过程中不要关闭窗口。</p>
+                    </li>
+                    <li>
+                        <h3>2. 连接设备</h3>
+                        <p>将罗技 G502 鼠标通过 USB 接口连接至电脑，或确保鼠标已通过 LIGHTSPEED 2.4GHz 接收器/蓝牙连接。软件启动后会自动检测设备。</p>
+                    </li>
+                    <li>
+                        <h3>3. 自定义配置</h3>
+                        <p>在 G Hub 主界面中，点击 G502 图标。您可以在此调节 DPI（每英寸点数）、设置 6 个可编程按钮、编写游戏宏以及配置 RGB 灯光效果。</p>
+                    </li>
+                    <li>
+                        <h3>4. 保存并测试</h3>
+                        <p>调整完成后，点击右下角的“保存”按钮。您可以直接在“设备预览”区域测试按键响应和灯光效果。</p>
+                    </li>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section id="features" class="content-section">
+                <h2 class="section-title">G502 驱动核心功能</h2>
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>DPI 无级调节</h3>
+                        <p>通过软件精确设置 200 至 25600 DPI，根据不同游戏场景一键切换灵敏度，实现精准定位。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>游戏宏编程</h3>
+                        <p>支持录制和编辑复杂的多键位动作宏，将繁琐的操作简化为一次点击，大幅提升游戏效率。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">💡</div>
+                        <h3>RGB 灯效控制</h3>
+                        <p>自定义鼠标底部的呼吸灯效、颜色渐变及灯光强度，打造独一无二的个性化外观。</p>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">🔋</div>
+                        <h3>电池管理</h3>
+                        <p>对于无线版本，可设置超长续航模式、自动关机时间及充电状态指示灯。</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <aside>
+            <div class="sidebar-card">
+                <h3>💡 常见问题 (FAQ)</h3>
+                <div class="faq-item">
+                    <h4>驱动安装失败怎么办？</h4>
+                    <p>请确保关闭杀毒软件，并以管理员身份运行安装程序。如果是 Windows 7 系统，请尝试安装 .NET Framework 4.7.2。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>如何重置鼠标默认设置？</h4>
+                    <p>在 G Hub 软件中，点击鼠标图标，选择“恢复默认值”按钮即可将所有参数恢复出厂设置。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>G502 支持无线连接吗？</h4>
+                    <p>部分型号（如 G502 LIGHTSPEED）支持无线连接，需要配合专用的 LIGHTSPEED USB 接收器使用。</p>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>📖 相关资源</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" class="text-small text-muted">
+                            <span class="tag">教程</span> 罗技 G502 按键图解
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" class="text-small text-muted">
+                            <span class="tag">指南</span> 游戏宏录制教程
+                        </a>
+                    </li>
+                    <li style="margin-bottom: 0.8rem;">
+                        <a href="#" class="text-small text-muted">
+                            <span class="tag">资讯</span> 2024 年鼠标选购指南
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于驱动中心</h4>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    本站为用户提供罗技 G 系列游戏外设的官方驱动下载与辅助资源。我们致力于帮助用户解决驱动安装、设备配置及使用中的常见问题。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">罗技官方网站</a></li>
+                    <li><a href="#">支持中心</a></li>
+                    <li><a href="#">社区论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系我们</h4>
+                <ul>
+                    <li><a href="#">意见反馈</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 罗技G502驱动中心. All Rights Reserved. 非罗技官方网站.
+        </div>
+    </footer>
+
+</body>
+</html>
